@@ -1,0 +1,420 @@
+@import "_var.scss";
+@import "_render.scss";
+@import "_mixin.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+html {
+  scroll-behavior: smooth;
+  font-size: 62.5%;
+}
+a,
+a:hover {
+  text-decoration: none;
+}
+
+.main_header {
+  width: 100vw;
+  & .navbar {
+    box-shadow: $border-shadow;
+    padding: 3rem;
+
+    & .navbar-brand {
+      font-size: 2rem;
+      font-weight: 500;
+      color: $hover-color;
+
+      & .fas {
+        color: $primary-color;
+      }
+    }
+    & .navbar-nav {
+      padding-left: 15rem;
+    }
+    & .nav-item .nav-link {
+      font-size: 1.6rem;
+      color: $hover-color;
+      text-transform: capitalize;
+      padding-right: 3rem;
+      margin-left: 2rem;
+      padding: 0.8rem 2rem;
+      border-radius: 4.5rem;
+    }
+    & .nav-item:first-child .nav-link {
+      margin-left: 0%;
+    }
+    & .nav-item .active {
+      @include myBtn;
+    }
+    & .nav-link:hover {
+      color: $text-color;
+      background-color: $primary-color;
+    }
+  }
+
+  & .header_virus {
+    background: url("../images/home-bg.png");
+    background-repeat: no-repeat;
+    // background-attachment: fixed;
+    background-position: center;
+    height: 100vh;
+    width: 100vw;
+    &__img {
+      @include content-center(center);
+    }
+
+    &__img img {
+      height: 70vh;
+      width: 60vw;
+    }
+
+    &__content h4 {
+      font-size: 2rem;
+      color: $primary-color;
+    }
+    &__content h1 {
+      font-size: 6rem;
+      font-weight: 600;
+      color: $hover-color;
+      margin-bottom: 2rem;
+    }
+    &__content a {
+      @include myBtn;
+      font-size: 1.5rem;
+    }
+    &__content a:hover {
+      @include myBtn;
+      @include hoverEffects;
+    }
+  }
+}
+
+.about {
+  height: 100%;
+  width: 100%;
+  background-color: $muted-color;
+  &__content {
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    // padding-top: 25rem;
+
+    & h2 {
+      font-size: 5rem;
+      color: $hover-color;
+    }
+    & p {
+      font-size: 2rem;
+      color: rgba(66, 64, 64, 0.418);
+    }
+    & a {
+      @include myBtn;
+      font-size: 1.5rem;
+    }
+    & a:hover {
+      @include hoverEffects;
+    }
+  }
+
+  &__img {
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    // padding-top: 8rem;
+  }
+}
+
+.prevention {
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  padding-top: 3rem;
+
+  & .row {
+    margin-bottom: 3rem;
+  }
+  & h2 {
+    padding-bottom: 3rem;
+    font-size: 3rem;
+    text-transform: capitalize;
+    font-weight: 500;
+    color: $hover-color;
+  }
+  & h2 span {
+    color: $primary-color;
+  }
+  & .card {
+    border: none;
+    background-color: $muted-color;
+    padding: 1rem 3rem;
+  }
+  & .card .card-body img {
+    height: 10vh;
+    margin-bottom: 2rem;
+  }
+  & .card .card-body .card-title {
+    font-size: 2rem;
+    color: $hover-color;
+  }
+  & .card .card-body .card-text {
+    font-size: 1.5rem;
+  }
+}
+
+.Team {
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  background-color: $muted-color;
+
+  & .card {
+    width:100%;
+    box-shadow: $border-shadow;
+    background-color: #fff;
+  }
+  & .card-text {
+    color: $primary-color;
+  }
+  & .card .card-body img {
+    height: 30vh;
+  }
+}
+
+.contact {
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  padding-top: 3rem;
+  & form {
+    background: $muted-color;
+    padding: 3rem;
+     
+    & input{
+      width:100%;
+      padding: 1.5rem 2.5rem;
+      margin-left: 2rem;
+      box-sizing: border-box;
+      border: none;
+      color:$hover-color;
+      font-size: 1.2rem;
+    }
+    & textarea{
+      width:100%;
+      padding: 4rem 2.5rem;
+      margin-left: 2rem;
+      box-sizing: border-box;
+      border: none;
+      color:$hover-color;
+      font-size: 1.2rem;
+      margin-bottom: 1.5rem;
+    }
+  }
+  & button {
+    margin-left: 2rem;
+    @include myBtn;
+  }
+}
+
+.blogs {
+  height: 100%;
+  width: 100%;
+  // text-align: center;
+  padding-top: 3rem;
+  background-color: $muted-color;
+
+  & h2 {
+    padding-bottom: 3rem;
+    font-size: 3rem;
+    text-transform: capitalize;
+    font-weight: 500;
+    color: $hover-color;
+    text-align: center;
+  }
+  & h2 span {
+    color: $primary-color;
+  }
+  & .card {
+    border: none;
+    background-color: $muted-color;
+    padding: 1rem 3rem;
+  }
+  & .card .card-body img {
+    height: 60vh;
+    margin-bottom: 2rem;
+    transition: 0.4s linear;
+  }
+  & .card .card-body figure:hover {
+    transform: scale(1.1);
+  }
+  & .card .card-body .card-title {
+    font-size: 2.5rem;
+    color: $hover-color;
+    margin-bottom: 2rem;
+  }
+
+  & .card .card-body a {
+    @include myBtn;
+    font-size: 1.5rem;
+    position: relative;
+  }
+
+  & .card .card-body a:hover {
+    @include hoverEffects;
+  }
+}
+
+.footer {
+  height: 100%;
+  width: 100%;
+  // text-align: center;
+  padding-top: 4rem;
+
+  & h3 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    font-weight: 500;
+  }
+  & a {
+    display: block;
+    color: $hover-color;
+    font-size: 1.3rem;
+    margin-bottom: 1.2rem;
+    &:hover {
+      color: $primary-color;
+    }
+  }
+
+  & p {
+    font-size: 1.7rem;
+    text-align: center;
+    & span {
+      color: $primary-color;
+    }
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .main_header {
+    & .navbar .nav-item .nav-link {
+      // float: left;
+      text-align: center;
+    }
+  }
+  .header_virus {
+    // width:100vw;
+    &__img img {
+      display: none;
+    }
+    &__content {
+      margin-left: 2rem;
+      padding: 2rem;
+    }
+  }
+  .about {
+    width: 100vw;
+    &__content {
+      height: 80vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      margin-left: 2rem;
+    }
+    &__img {
+      height: 80vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+    }
+  }
+
+  .prevention {
+    // padding-left: 2rem;
+    & .container {
+      padding-left: 3.5rem;
+      & .card {
+        width: 80vw;
+        margin-bottom: 2rem;
+      }
+    }
+  }
+  .Team{
+    width: 100%;
+      & .card{
+        width: 70vw;
+        padding: 0%;
+        margin: 0%;
+      }
+  }
+  .contact { 
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      flex-direction: column;
+    & h2 {
+      font-size: 2.5rem;
+      text-align: center;
+    }
+    & form{
+      // padding: 1rem;
+      // width:30rem
+      
+      & input{
+        width:100%;
+        padding: 1.5rem 2rem;
+        margin-left: 0.5rem;
+        box-sizing: border-box;
+        border: none;
+        color:$hover-color;
+        font-size: 1.2rem;
+      }
+      & textarea{
+        width:100%;
+        padding: 4rem 2rem;
+        margin-left: 0.5rem;
+        box-sizing: border-box;
+        border: none;
+        color:$hover-color;
+        font-size: 1.2rem;
+        margin-bottom: 1.5rem;
+      }
+    }
+  //   & .map{
+  //     height: 80vh;
+  //     display: flex;
+  //     flex-direction: column;
+  //     justify-content: flex-start;
+  //     align-items: flex-start;
+  //  }
+  }
+
+  .blogs {
+    width: 100%;
+    & .container {
+      // margin-left: 3rem;
+      & .card {
+        width: 70vw;
+        margin-bottom: 2rem;
+      }
+    }
+  }
+
+  .footer {
+    text-align: center;
+    & p {
+      font-size: 1.2rem;
+    }
+  }
+}
